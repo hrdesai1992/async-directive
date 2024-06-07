@@ -1,0 +1,190 @@
+<div coreUIGrid>
+    <coreui-site-header [coreUIGridItem]="12">
+        <div class="Core-SiteHeader-contentLeft">
+            <nav
+                coreUIPrimaryNavigation
+                id="nav-primary"
+                aria-label="Primary"
+            >
+                <coreui-primary-navigation-item [active]="true">
+                    <a
+                        coreUIPrimaryNavigationItemLink
+                        routerLink="./"
+                        href="javascript:void(0);"
+                    >
+                        Nav 1
+                    </a>
+                </coreui-primary-navigation-item>
+                <coreui-primary-navigation-item>
+                    <a
+                        coreUIPrimaryNavigationItemLink
+                        routerLink="./"
+                        href="javascript:void(0);"
+                    >
+                        Nav 2
+                    </a>
+                </coreui-primary-navigation-item>
+                <coreui-primary-navigation-item>
+                    <a
+                        coreUIPrimaryNavigationItemLink
+                        routerLink="./"
+                        href="javascript:void(0);"
+                    >
+                        Nav 3
+                    </a>
+                </coreui-primary-navigation-item>
+            </nav>
+        </div>
+        <div class="Core-SiteHeader-contentRight">
+            <coreui-menu
+                buttonLabel="My Account"
+                menuButtonStyle="link"
+                verticalPosition="bottom"
+                iconAlignment="right"
+            >
+                <coreui-menu-section>
+                    <button type="button" coreUIMenuItem>
+                        My Profile
+                    </button>
+                    <button type="button" coreUIMenuItem>
+                        Log out
+                    </button>
+                </coreui-menu-section>
+            </coreui-menu>
+        </div>
+        <coreui-menu
+            verticalPosition="bottom"
+            menuButtonStyle="link"
+            icon="settings"
+        >
+            <coreui-menu-section>
+                <button type="button" coreUIMenuItem>
+                    Application Settings
+                </button>
+            </coreui-menu-section>
+        </coreui-menu>
+        <coreui-menu
+            verticalPosition="bottom"
+            menuButtonStyle="link"
+            icon="help"
+        >
+            <coreui-menu-section>
+                <button type="button" coreUIMenuItem>
+                    Help on this page
+                </button>
+                <button type="button" coreUIMenuItem>
+                    Documentation
+                    <i coreUIIcon="newTab"></i>
+                </button>
+            </coreui-menu-section>
+            <coreui-menu-item-divider></coreui-menu-item-divider>
+            <coreui-menu-section>
+                <div class="version">
+                    <div class="text-style-muted-1">
+                        Version 20.0.0
+                    </div>
+                </div>
+            </coreui-menu-section>
+        </coreui-menu>
+        <coreui-menu
+            verticalPosition="bottom"
+            menuButtonStyle="link"
+            icon="grid"
+        >
+            <coreui-menu-section label="Product Category 1">
+                <button type="button" coreUIMenuItem>
+                    Product Name
+                    <i coreUIIcon="newTab"></i>
+                </button>
+                <button type="button" coreUIMenuItem>
+                    Product Name
+                    <i coreUIIcon="newTab"></i>
+                </button>
+                <button type="button" coreUIMenuItem>
+                    Product Name
+                    <i coreUIIcon="newTab"></i>
+                </button>
+            </coreui-menu-section>
+            <coreui-menu-item-divider></coreui-menu-item-divider>
+            <coreui-menu-section label="Product Category 2">
+                <button type="button" coreUIMenuItem>
+                    Product Name
+                    <i coreUIIcon="newTab"></i>
+                </button>
+                <button type="button" coreUIMenuItem>
+                    Product Name
+                    <i coreUIIcon="newTab"></i>
+                </button>
+            </coreui-menu-section>
+        </coreui-menu>
+    </coreui-site-header>
+    <section class="Core-SiteContent-nav" [coreUIGridItem]="1">
+        <nav coreUISecondaryNavigation>
+            <coreui-secondary-navigation-item
+                label="Nav Item Active"
+            >
+                <coreui-secondary-navigation-item
+                    url="/primary/styling-assets/layout"
+                    [active]="true"
+                    label="Sub Nav Item Active"
+                    (activated)="onClick($event)"
+                ></coreui-secondary-navigation-item>
+                <coreui-secondary-navigation-item
+                    url="/primary/styling-assets/layout"
+                    [active]="false"
+                    label="Sub Nav Item"
+                    (activated)="onClick($event)"
+                ></coreui-secondary-navigation-item>
+                <coreui-secondary-navigation-item
+                    url="/primary/styling-assets/layout"
+                    [active]="false"
+                    label="Sub Nav Item"
+                    (activated)="onClick($event)"
+                ></coreui-secondary-navigation-item>
+            </coreui-secondary-navigation-item>
+            <coreui-secondary-navigation-item
+                label="Nav Item"
+                url="/primary/layout/page-setup/overview"
+                [active]="false"
+                (activated)="onClick($event)"
+            ></coreui-secondary-navigation-item>
+            <coreui-secondary-navigation-item
+                label="Nav Item"
+                url="/primary/layout/page-setup/overview"
+                [active]="false"
+                (activated)="onClick($event)"
+            ></coreui-secondary-navigation-item>
+            <coreui-secondary-navigation-item
+                label="Nav Item"
+                url="/primary/layout/page-setup/overview"
+                [active]="false"
+                (activated)="onClick($event)"
+            ></coreui-secondary-navigation-item>
+        </nav>
+    </section>
+    <main class="Core-SiteContent-main" [coreUIGridItem]="11">
+        <coreui-breadcrumbs>
+            <a coreUIBreadcrumbLink>Parent Page</a>
+            <span coreUIBreadcrumbSlash></span>
+            <a coreUIBreadcrumbLink>Child One</a>
+            <span coreUIBreadcrumbSlash></span>
+            <span coreUIBreadcrumbEnd>Active Page</span>
+        </coreui-breadcrumbs>
+        <app-reports></app-reports>
+    </main>
+    <coreui-site-footer [coreUIGridItem]="12">
+        <span class="Core-SiteFooter-copyright">
+            &#xa9; {{ thisYear }} Epsilon Data Management, LLC. All
+            rights reserved.
+        </span>
+    </coreui-site-footer>
+</div>
+
+<h1>Chatbot</h1>
+
+<div *ngFor="let message of messages">
+    {{ message }}
+  </div>
+  
+  <input type="text" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type a message...">
+  <button (click)="sendMessage()">Send</button>
